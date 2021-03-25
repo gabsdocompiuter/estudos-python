@@ -6,6 +6,6 @@ while continuar:
     for i in range(11):
         print(f'{numero} x {i} = {numero * i}')
 
-    continuarResposta = input("inserir outro número? [S]im: ")
-    continuar = continuarResposta.upper() == 'S'
+    continuar_resposta = input("inserir outro número? [S]im: ")
+    continuar = continuar_resposta.upper() == 'S'
     

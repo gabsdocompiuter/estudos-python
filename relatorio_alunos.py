@@ -2,16 +2,16 @@ class Aluno:
     def __init__(self, nome):
         self.nome = nome
     
-    def setNotas(self, notas):
+    def set_notas(self, notas):
         self.notas = notas
 
-    def getNotaTotal(self):
+    def get_nota_total(self):
         total = 0
         for nota in self.notas:
             total += nota
         return total / len(self.notas)
 
-def carregaAluno():
+def carrega_aluno():
     nome = input('Insira o nome do aluno: ')
 
     notas = []
@@ -20,17 +20,17 @@ def carregaAluno():
     notas.append(float(input('Insira a 3ª nota do aluno: ')))
 
     aluno = Aluno(nome)
-    aluno.setNotas(notas)
+    aluno.set_notas(notas)
 
     return aluno
 
-def imprimeAlunos(alunos):
+def imprime_alunos(alunos):
     print('┌---- Nome ----┬---- Nota ----┐')
 
     for aluno in alunos:
-        nomeRelatorio = aluno.nome.ljust(14)
-        notaRelatorio = str(aluno.getNotaTotal()).ljust(14)
-        print(f'|{nomeRelatorio}|{notaRelatorio}|')
+        nome_relatorio = aluno.nome.ljust(14)
+        nota_relatorio = f'{aluno.get_nota_total():.2f}'.ljust(14)
+        print(f'|{nome_relatorio}|{nota_relatorio}|')
 
     print('└--------------┴--------------┘')
 
@@ -40,9 +40,9 @@ continuar = True
 alunos = []
 while continuar:
     print()
-    alunos.append(carregaAluno())
+    alunos.append(carrega_aluno())
 
-    inputContinuar = input('Inserir outro aluno? ([S]im): ')
-    continuar = (inputContinuar == 'S' or inputContinuar == 's')
+    input_continuar = input('Inserir outro aluno? ([S]im): ')
+    continuar = (input_continuar == 'S' or input_continuar == 's')
 
-imprimeAlunos(alunos)
+imprime_alunos(alunos)
