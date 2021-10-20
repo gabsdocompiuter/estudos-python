@@ -3,3 +3,4 @@ Visualização de dados
 
 ### Dependências
 - `pip install matplotlib`
+- `pip install numpy`
